@@ -3,17 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
+#    By: alejandro <alejandro@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 13:25:46 by alex              #+#    #+#              #
-#    Updated: 2024/10/14 23:01:17 by alex             ###   ########.fr        #
+#    Updated: 2026/05/28 06:29:57 by alejandro        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+SRC_DIR = src
+OBJ_DIR = obj
+SRCS_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
 		ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
 		ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
@@ -26,20 +28,25 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_lstclear_bonus.c ft_lstdelone_bonus.c \
 		ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c \
 		ft_lstnew_bonus.c ft_lstsize_bonus.c
-OBJS = $(SRCS:.c=.o)
+SRCS = $(addprefix $(SRC_DIR)/, $(SRCS_FILES))
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-HEADERS = libft.h
+HEADERS = $(SRC_DIR)/libft.h
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c $(HEADERS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS) | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
 clean:
-	rm -f *.o
+	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
