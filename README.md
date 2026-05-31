@@ -1,15 +1,21 @@
 # Libft
 
-<h2 align="center">My own library from scratch in C</h2>
 <div align="center">
-	<img alt="Made with C" src="https://img.shields.io/badge/Made%20with-C-blue" />
-	<img alt="42 Projects" src="https://img.shields.io/badge/42-Projects-black" />
-	<img alt="GNU Makefile" src="https://img.shields.io/badge/GNU%20Makefile-brown" />
+	<strong>My implementation of the printf function from scratch</strong>
+	<br />
+	<br />
+	<a href="https://42.fr/">
+		<img src="https://img.shields.io/badge/42-Project-black" alt="42" />
+	</a>
+	<a href="https://en.cppreference.com/w/c">
+		<img src="https://img.shields.io/badge/C-Language-blue" alt="C" />
+	</a>
+	<a href="https://www.gnu.org/software/make/">
+		<img src="https://img.shields.io/badge/GNU-Makefile-green" alt="GNU Makefile" />
+	</a>
 </div>
 
-<div align="center">
-	<img alt="Libft Library" src="assets/library.jpg" />
-</div>
+![library](img/library.jpg)
 
 ## 📖 Overview
 Libft is the first project in the 42 curriculum. The goal is to build your own C library by reimplementing a set of standard C functions. At 42, you cannot use external libraries, so this project becomes the base library you will reuse in later Common Core projects.
@@ -28,21 +34,14 @@ sudo apt-get install -y libc6-dev
 
 ## 👷 Build
 ```bash
-# Clone the repository
-git clone https://github.com/alcarril/Libft.git
-cd Libft
+git clone https://github.com/alcarril/Libft.git # Clone the repository
+cd Libft # Navigate to the project directory
 
-# Build the library
-make
+make #Build the library
 
-# Clean object files
-make clean
-
-# Remove objects and library
-make fclean
-
-# Full rebuild
-make re
+make clean # Clean object files
+make fclean # Remove objects and library
+make re # Full rebuild
 ```
 
 ## ▶️ Use
@@ -384,7 +383,7 @@ int ft_lstsize(t_list *lst);
 ### C compilation steps
 The C compiler is a program that parses the language and transforms it through several phases until producing an executable file that the OS can run.
 
-![Compilation](assets/Compilation.png)
+![Compilation](img/Compilation.png)
 
 1. Preprocessor: expands macros, includes headers, and handles directives like `#define`.
 2. Compilation: translates C source into assembly.
@@ -464,4 +463,4 @@ re: fclean all
 - https://www.gnu.org/software/make/manual/make.html
 
 ## 👨‍💻 Author
-[Alejandro Carrillo (alcarril)](https://github.com/alcarril)
+**Alejandro Carrillo** - https://github.com/alcarril
