@@ -1,7 +1,7 @@
 # Libft
 
 <div align="center">
-	<strong>My implementation of the printf function from scratch</strong>
+	<strong><span style="font-size: 1.25em;">My own library from scratch in C</span></strong>
 	<br />
 	<br />
 	<a href="https://42.fr/">
